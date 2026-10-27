@@ -210,6 +210,121 @@ kbd {
   background: var(--accent-hover);
 }
 
+/* ---- Tabla de récords ---- */
+.leaderboard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.leaderboard-entry {
+  display: flex;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text);
+  align-items: baseline;
+}
+
+.leaderboard-entry .lb-rank {
+  color: var(--label);
+  width: 14px;
+}
+
+.leaderboard-entry .lb-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leaderboard-entry .lb-score {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--accent);
+}
+
+.leaderboard-entry.highlight {
+  background: var(--accent-glow);
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-weight: 700;
+}
+
+.leaderboard-empty {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.leaderboard-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.leaderboard-stats strong {
+  color: var(--accent);
+}
+
+#reset-scores-btn {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+#reset-scores-btn:hover {
+  background: var(--danger);
+  color: var(--btn-text);
+}
+
+#overlay-save-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+#overlay-save-form.hidden {
+  display: none;
+}
+
+#overlay-name-input {
+  background: var(--canvas-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+#overlay-save-btn {
+  background: var(--accent);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#overlay-save-btn:hover {
+  background: var(--accent-hover);
+}
+
+#overlay-leaderboard-list {
+  max-width: 220px;
+  width: 100%;
+}
+
 /* ---- Toggle de tema ---- */
 #theme-toggle {
   position: fixed;

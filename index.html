@@ -42,6 +42,16 @@
           <canvas id="next-canvas" width="120" height="120"></canvas>
         </div>
 
+        <div class="panel-section" id="leaderboard">
+          <span class="label">RÉCORDS</span>
+          <ol id="leaderboard-list" class="leaderboard-list"></ol>
+          <div class="leaderboard-stats">
+            <span>Mejor combo: <strong id="best-combo">0</strong></span>
+            <span>Máx. líneas: <strong id="max-lines-clear">0</strong></span>
+          </div>
+          <button id="reset-scores-btn" type="button">Resetear récords</button>
+        </div>
+
         <div class="panel-section controls">
           <span class="label">CONTROLS</span>
           <ul>
@@ -88,6 +98,14 @@
             </select>
           </div>
         </div>
+
+        <div id="overlay-save-form" class="hidden">
+          <p class="label">¡Nueva puntuación en el top 5!</p>
+          <input id="overlay-name-input" type="text" placeholder="Tu nombre" maxlength="15" />
+          <button id="overlay-save-btn" type="button">Guardar</button>
+        </div>
+
+        <ol id="overlay-leaderboard-list" class="leaderboard-list"></ol>
 
         <button id="restart-btn">Reiniciar</button>
       </div>

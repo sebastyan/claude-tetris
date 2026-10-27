@@ -230,3 +230,45 @@ kbd {
 #theme-toggle:hover {
   border-color: var(--accent);
 }
+
+/* ---- Toggle de skin ---- */
+#skin-toggle {
+  position: fixed;
+  top: 16px;
+  right: 140px;
+  background: var(--canvas-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+#skin-toggle:hover {
+  border-color: var(--accent);
+}
+
+/* ---- Skins visuales ---- */
+:root[data-skin="neon"] {
+  --canvas-bg: #000000;
+  --grid: #101820;
+  --highlight: rgba(255, 255, 255, 0.5);
+  --ghost-alpha: 0.25;
+}
+
+:root[data-skin="pastel"] {
+  --canvas-bg: #fdfaf6;
+  --grid: #ece3f5;
+  --highlight: rgba(255, 255, 255, 0.6);
+  --ghost-alpha: 0.3;
+}
+
+:root[data-skin="pixelart"] {
+  --canvas-bg: var(--bg);
+  --grid: #2a2a2a;
+  --highlight: rgba(255, 255, 255, 0.2);
+}

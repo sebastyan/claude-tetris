@@ -9,12 +9,18 @@
       var t = null;
       try { t = localStorage.getItem('theme'); } catch (e) {}
       document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark';
+
+      var s = null;
+      var validSkins = ['retro', 'neon', 'pastel', 'pixelart'];
+      try { s = localStorage.getItem('tetris-skin'); } catch (e) {}
+      document.documentElement.dataset.skin = validSkins.indexOf(s) !== -1 ? s : 'retro';
     })();
   </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <button id="theme-toggle" type="button" tabindex="-1" aria-pressed="false" aria-label="Cambiar tema"></button>
+  <button id="skin-toggle" type="button" tabindex="-1" aria-pressed="false" aria-label="Cambiar skin"></button>
 
   <div class="wrapper">
     <h1 class="title">TETRIS</h1>

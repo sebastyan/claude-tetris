@@ -210,6 +210,207 @@ kbd {
   background: var(--accent-hover);
 }
 
+/* ---- Menú de pausa ---- */
+.pause-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.pause-menu.hidden {
+  display: none;
+}
+
+#resume-btn,
+#toggle-controls-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 8px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#resume-btn {
+  background: var(--accent);
+  color: var(--btn-text);
+  border-color: var(--accent);
+}
+
+#resume-btn:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+#toggle-controls-btn:hover {
+  background: var(--accent-glow);
+}
+
+.controls-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.controls-list.hidden {
+  display: none;
+}
+
+.controls-list li {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.level-select-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.level-select-row label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--label);
+  font-weight: 600;
+}
+
+#start-level-select {
+  background: var(--kbd-bg);
+  color: var(--text);
+  border: 1px solid var(--kbd-border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---- Tabla de récords ---- */
+.leaderboard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.leaderboard-entry {
+  display: flex;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text);
+  align-items: baseline;
+}
+
+.leaderboard-entry .lb-rank {
+  color: var(--label);
+  width: 14px;
+}
+
+.leaderboard-entry .lb-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leaderboard-entry .lb-score {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--accent);
+}
+
+.leaderboard-entry.highlight {
+  background: var(--accent-glow);
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-weight: 700;
+}
+
+.leaderboard-empty {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.leaderboard-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.leaderboard-stats strong {
+  color: var(--accent);
+}
+
+#reset-scores-btn {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+#reset-scores-btn:hover {
+  background: var(--danger);
+  color: var(--btn-text);
+}
+
+#overlay-save-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+#overlay-save-form.hidden {
+  display: none;
+}
+
+#overlay-name-input {
+  background: var(--canvas-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+#overlay-save-btn {
+  background: var(--accent);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#overlay-save-btn:hover {
+  background: var(--accent-hover);
+}
+
+#overlay-leaderboard-list {
+  max-width: 220px;
+  width: 100%;
+}
+
 /* ---- Toggle de tema ---- */
 #theme-toggle {
   position: fixed;
@@ -229,4 +430,46 @@ kbd {
 
 #theme-toggle:hover {
   border-color: var(--accent);
+}
+
+/* ---- Toggle de skin ---- */
+#skin-toggle {
+  position: fixed;
+  top: 16px;
+  right: 140px;
+  background: var(--canvas-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+#skin-toggle:hover {
+  border-color: var(--accent);
+}
+
+/* ---- Skins visuales ---- */
+:root[data-skin="neon"] {
+  --canvas-bg: #000000;
+  --grid: #101820;
+  --highlight: rgba(255, 255, 255, 0.5);
+  --ghost-alpha: 0.25;
+}
+
+:root[data-skin="pastel"] {
+  --canvas-bg: #fdfaf6;
+  --grid: #ece3f5;
+  --highlight: rgba(255, 255, 255, 0.6);
+  --ghost-alpha: 0.3;
+}
+
+:root[data-skin="pixelart"] {
+  --canvas-bg: var(--bg);
+  --grid: #2a2a2a;
+  --highlight: rgba(255, 255, 255, 0.2);
 }
